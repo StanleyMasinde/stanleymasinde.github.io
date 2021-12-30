@@ -15,7 +15,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
+            <li><a id="back-to-top" href="#">Home</a></li>
             <li><a id="section-link" href="#about-section">About</a></li>
             <li><a id="section-link" href="#skills-section">Skills</a></li>
             <li><a id="section-link" href="#projects-section">Projects</a></li>
@@ -168,11 +168,14 @@
                 <h4>Or fill out the form below</h4>
                 <form action="#">
                     <label for="name">Name</label>
-                    <input type="text" id="name" autocapitalize="on" autocomplete="name" autocorrect="on" required>
+                    <input minlength="4" maxlength="20" placeholder="John Doe" type="text" id="name" autocapitalize="on"
+                        autocomplete="name" autocorrect="on">
                     <label for="email">Email</label>
-                    <input type="email" id="email" autocapitalize="on" autocomplete="email" autocorrect="on" required>
+                    <input placeholder="john@example.com" type="email" id="email" autocapitalize="on"
+                        autocomplete="email" autocorrect="on" required>
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" rows="2" required></textarea>
+                    <textarea placeholder="Hi Stanley, I am interested in your services." name="message" id="message"
+                        rows="2" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
@@ -181,10 +184,9 @@
 
     <footer>
         <p>
-            &copy; 2020 Stanley Masinde | All Rights Reserved. <br>
+            &copy; <span id="copyright-year"></span> Stanley Masinde | All Rights Reserved. <br>
             <a id="back-to-top" href="#">Back to top &uarr;</a>
         </p>
-    </footer>
     </footer>
 </body>
 

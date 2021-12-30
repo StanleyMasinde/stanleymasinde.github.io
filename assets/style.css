@@ -1,8 +1,26 @@
+/*
+* This file is the main stylesheet for the site. 
+* It is used to set the colors, fonts, and other styles.
+* 
+* This file is licensed under the MIT license as stated below. It is free to use, modify, and redistribute.
+*
+* @author: Stanley Masinde 
+*/
+:root {
+    --primary-color: #00bcd4;
+    --secondary-color: #f44336;
+    --tertiary-color: #ff9800;
+    --background-color: #d6d6d6;
+    --text-color: #212121;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-size: 20px;
+}
+
 body {
-    background: #d6d6d6;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    color: #333;
+    background: var(--background-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--text-color);
     line-height: 1.5;
     margin: 0;
     width: 100%;
@@ -18,35 +36,21 @@ img {
     max-width: 100%;
 }
 
-div.about-container {
-    margin: 0 auto;
+div.brand {
+    margin: auto;
     max-width: 900px;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-div.about-image {
-    margin: 30px 0;
-}
-
-div.about-content {
-    margin: 30px 0;
-    border: thin solid rgb(141, 139, 139);
-    padding: 20px;
-}
-
-div.about-image img {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    transform: skew(0deg, -5deg);
-}
-
-nav {
+/**
+* Large devices (desktops, 600px and up)
+*/
+@media screen and (min-width: 600px) {
+    nav {
     background: #333;
     padding: 1em 0;
-}
+    }
 
 nav > ul {
     list-style: none;
@@ -75,106 +79,319 @@ nav > ul > li > a:hover {
     color: #333;
 }
 
+div.about-container {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+div.about-image {
+    margin: 30px 0;
+}
+
+div.about-content {
+    margin: 30px 0;
+    border: thin solid rgb(141, 139, 139);
+    padding: 20px;
+}
+
+div.about-image img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    transform: skew(0deg, -5deg);
+}
+
 section {
     padding: 1em;
     margin: 1em 0;
 }
 
-section#skills-section > ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1em;
-    list-style: none;
+/*
+    * --------------------------------------------------
+    * SKILLS SECTION
+    * --------------------------------------------------
+    */
+    section#skills-section > ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        list-style: none;
+    }
+    
+
+    /*
+    * --------------------------------------------------
+    * SECTION TITLE
+    * --------------------------------------------------
+    */
+    .section-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 1em 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+
+    div.title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    
+    div.contact-form {
+        margin: 1em 0;
+        width: 100%;
+        padding: 1em;
+    }
+    
+    section#contact-section > div {
+        padding: 2em;
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-justify: inter-word;
+    }
+    
+    section#contact-section > h3 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 1em 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    div.projects-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        list-style: none;
+    }
+    
+    div.project-card {
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        list-style: none;
+    }
+    
+    div.project-image {
+        margin: 1em 0;
+    }
+    
+    div.project-content {
+        margin: 1em 0;
+        border: thin solid rgb(141, 139, 139);
+        padding: 20px;
+    }
+
+    input[type=text], input[type=email], input[type=password] {
+        border: thin solid #333;
+        padding: 0.5em;
+        margin: 0.5em 0;
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+        padding: 1em;
+    }
+
+    textarea {
+        border: thin solid #333;
+        padding: 0.5em;
+        margin: 0.5em 0;
+        width: 100%;
+        height: auto;
+        padding: 1em;
+    }
 }
 
-.section-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 1em 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/*
+* Small devices (Mobile phones, 600px and below)
+*/
+@media only screen and (max-width: 600px) {
+    /*
+    * --------------------------------------------------
+    * NAVIGATION
+    * --------------------------------------------------
+    */
+    nav {
+        background: #333;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        transition: all 0.2s ease-in-out;
+        font-size: 50%;
+        width: 100%;
+    }
+
+    nav > ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    nav > ul > li {
+        display: inline-block;
+    }
+
+    nav > ul > li.active {
+        background: #fff;
+        color: #333;
+    }
+
+    nav > ul > li > a {
+        color: #fff;
+        text-decoration: none!important;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    div.about-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    div.about-image {
+        margin: auto;
+    }
+
+    div.about-content {
+        margin: auto;
+        padding: 20px;
+    }
+
+    div.about-image img {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        transform: skew(0deg, -5deg);
+    }
+
+    section {
+        margin: auto;
+    }
+
+    section#skills-section > ul {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 0.5em;
+        list-style: none;
+        overflow: scroll;
+        padding: 0;
+    }
+
+    section#skills-section > ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    section#skills-section > ul > li {
+        display: inline-block;
+        border: thin solid rgb(141, 139, 139);
+        padding: 20px;
+    }
+
+    section#skills-section > ul > li > h1 {
+        font-size: 16px;
+        font-weight: thin;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    section#skills-section > ul > li > p {
+        display: none;
+    }
+
+    /*
+    * --------------------------------------------------
+    * SECTION TITLE
+    * --------------------------------------------------
+    */
+    .section-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 1em 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    div.title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    section#contact-section > div {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-justify: inter-word;
+    }
+
+    section#contact-section > h3 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 1em 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    div.projects-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 1em;
+        list-style: none;
+        overflow: scroll;
+        padding: 1em;
+    }
+
+    div.project-card > h1 {
+        font-size: 12px;
+        font-weight: thin;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    div.project-card {
+        width: 90vw;
+    }
+
+    div.project-content {
+        margin: 1em 0;
+    }
+
+    input[type=text], input[type=email], input[type=password] {
+        border: thin solid #333;
+        width: 100%;
+        height: 3em;
+        transition: all 0.2s ease-in-out;
+    }
+
+    textarea {
+        border: thin solid #333;
+        width: 100%;
+        height: auto;
+    }
+
+    textarea::placeholder {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
 }
 
-div.title-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
 
-div.contact-form {
-    margin: 1em 0;
-    width: 100%;
-    padding: 1em;
-}
-
-section#skills-section > ul > li {
-    border: thin solid #111;
-    padding: 1em;
-    margin: 1em 0;
-    transition: all 0.2s ease-in-out;
-}
-
-section#contact-section > div {
-    padding: 2em;
-    margin: 1em 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-justify: inter-word;
-}
-
-section#contact-section > h3 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 1em 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-div.projects-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1em;
-    list-style: none;
-}
-
-div.project-card {
-    margin: 1em 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
-    list-style: none;
-}
-
-div.project-image {
-    margin: 1em 0;
-}
-
-div.project-content {
-    margin: 1em 0;
-    border: thin solid rgb(141, 139, 139);
-    padding: 20px;
-}
-
-input[type=text], input[type=email], input[type=password] {
-    border: thin solid #333;
-    padding: 0.5em;
-    margin: 0.5em 0;
-    width: 100%;
-    transition: all 0.2s ease-in-out;
-    padding: 1em;
-}
 
 input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
     outline: none;
     border-color: #333;
-}
-
-textarea {
-    border: thin solid #333;
-    padding: 0.5em;
-    margin: 0.5em 0;
-    width: 100%;
-    height: auto;
-    padding: 1em;
 }
 
 button {
@@ -200,6 +417,7 @@ footer {
     color: #fff;
     font-size: 0.8em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
 }
 
 footer > p {
