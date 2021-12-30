@@ -16,6 +16,10 @@
     --font-size: 20px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: var(--background-color);
     font-family: var(--font-family);
@@ -23,7 +27,6 @@ body {
     color: var(--text-color);
     line-height: 1.5;
     margin: 0;
-    width: 100%;
 }
 
 a {
@@ -205,6 +208,19 @@ section {
         height: auto;
         padding: 1em;
     }
+
+
+    button {
+        border: thin solid #333;
+        padding: 0.5em;
+        margin: 0.5em 0;
+        width: 30%;
+        background: #333;
+        color: #fff;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        padding: 1em;
+    }
 }
 
 /*
@@ -220,12 +236,9 @@ section {
         background: #333;
         position: fixed;
         bottom: 0;
-        left: 0;
-        right: 0;
         z-index: 10;
         transition: all 0.2s ease-in-out;
         font-size: 50%;
-        width: 100%;
     }
 
     nav > ul {
@@ -238,7 +251,7 @@ section {
         display: inline-block;
     }
 
-    nav > ul > li.active {
+    nav > ul > li > a.active {
         background: #fff;
         color: #333;
     }
@@ -250,7 +263,7 @@ section {
         font-size: 1.2em;
         padding: 0.5em 1em;
         border-radius: 5px;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
     div.about-container {
@@ -365,6 +378,11 @@ section {
         margin: 1em 0;
     }
 
+    div.contact-form {
+        width: 100%;
+        padding: 1em;
+    }
+
     input[type=text], input[type=email], input[type=password] {
         border: thin solid #333;
         width: 100%;
@@ -378,13 +396,33 @@ section {
         height: auto;
     }
 
-    textarea::placeholder {
+    textarea::placeholder, input[type=text]::placeholder, input[type=email]::placeholder {
         font-size: 1em;
         font-weight: bold;
         margin: 0;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-    
+
+    button {
+        border: thin solid #333;
+        padding: 0.5em;
+        margin: 0.5em 0;
+        width: 100%;
+        background: #333;
+        color: #fff;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        padding: 1em;
+    }
+
+    footer {
+        background: #333;
+        padding: 1em 0;
+        color: #fff;
+        font-size: 0.8em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 100%;
+    }
 }
 
 
@@ -394,30 +432,9 @@ input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
     border-color: #333;
 }
 
-button {
-    border: thin solid #333;
-    padding: 0.5em;
-    margin: 0.5em 0;
-    width: 30%;
-    background: #333;
-    color: #fff;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-    padding: 1em;
-}
-
 button:hover {
     background: #fff;
     color: #333;
-}
-
-footer {
-    background: #333;
-    padding: 1em 0;
-    color: #fff;
-    font-size: 0.8em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 100%;
 }
 
 footer > p {
