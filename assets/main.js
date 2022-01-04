@@ -62,4 +62,18 @@ window.addEventListener('load', function () {
             behavior: 'smooth'
         })
     })
+
+    if (window.location.hash) {
+        const section = document.querySelector(window.location.hash);
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        sectionLinks.forEach(function (link) {
+            if (link.getAttribute('href') === window.location.hash) {
+                link.classList.add('active');
+            }
+        });
+    }
 })
