@@ -96,11 +96,46 @@
     </div>
   </div>
 
-
+  <div class="px-3">
+    <h1 id="about" class="font-bold text-3xl text-secondary">Featured <span class="text-tertiary">Projects</span></h1>
+    <div v-for="p in featuredProjects" class="bg-primary text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-xl">
+      <div
+        class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] rounded-t-xl h-48 bg-cover bg-no-repeat aspect-video w-full">
+      </div>
+      <div class="px-3 mt-3">
+        <div>
+          <h1 class="text-2xl font-bold">{{p.title}}</h1>
+          <p class="">{{ p.description }}</p>
+        </div>
+        <div class="flex justify-center gap-3 mt-2 py-4 rounded-lg">
+          <button class="font-bold">Live link</button>
+          <button class="font-bold">Source Code</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, Ref } from 'vue';
-
+interface FeaturedProject {
+  title: string,
+  description: string,
+  image?: string,
+  link?: string,
+  sourceCode?: string
+}
 const showSideBar: Ref<boolean> = ref(false)
+const featuredProjects: Ref<Array<FeaturedProject>> = ref([
+  {
+    title: 'Notes',
+    description: 'A simple notes application built using indexed DB and works fully offline',
+    sourceCode: 'https://github.com/stanleymasinde/notes'
+  },
+  {
+    title: 'Gumzo',
+    description: 'A pointless chat application built on Firebase. No account needed dive in and chat with people',
+    sourceCode: 'https://github.com/stanleymasinde/gumzo'
+  }
+])
 </script>
