@@ -61,13 +61,13 @@
     </div>
   </div>
 
-  <div class="bg-[url('/bg_1.svg')] bg-cover bg-no-repeat">
+  <div class="bg-cover bg-no-repeat">
     <div class="bg-primary text-white w-full px-3 py-5">
       <h1 id="about" class="font-bold text-2xl text-secondary">About <span class="text-tertiary">Stanley</span></h1>
       <p class="font-semibold">
-        A <span class="text-tertiary">full-stack developer</span> with over <span class="text-tertiary">5 years of
+        A <span class="text-tertiary font-mono">full-stack developer</span> with over <span class="text-tertiary font-mono">5 years of
           experience</span> building products, I have extensive knowledge of
-        web application and <span class="italic text-tertiary">mobile web</span> development. His proven experience in
+        web application and <span class="italic text-tertiary font-mono">mobile web</span> development. I have proven experience in
         both endpoints as well as between them puts him in a unique position to
         deliver work that meets your team’s deadlines and exceeds your expectations.
       </p>
