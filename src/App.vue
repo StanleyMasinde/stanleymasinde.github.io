@@ -1,0 +1,62 @@
+<template>
+  <nav class="flex justify-between py-2 px-3 sm:py-4 sm:px-16">
+    <div>
+      <h1 class="font-extrabold text-3xl">Stanley</h1>
+    </div>
+    <ul class="hidden sm:flex gap-3">
+      <li class="cursor-pointer font-bold">About</li>
+      <li class="cursor-pointer font-bold">Projects</li>
+      <li class="cursor-pointer font-bold">Contact</li>
+    </ul>
+    <button @click="showSideBar = !showSideBar" class="sm:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-10 h-10 active:bg-transparent focus:bg-transparent">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+      </svg>
+    </button>
+  </nav>
+
+  <div v-show="showSideBar" class="sm:hidden inset-y-0 fixed bg-black/50 w-full">
+    <div class="fixed z-50 rounded-r-3xl backdrop-brightness-75 h-full w-3/4 bg-bgl">
+      <div class="grid place-items-center my-5">
+        <div class="rounded-full border-2 border-secondary aspect-square h-28"></div>
+        <div class="text-center">
+          <h1 class="font-extrabold text-2xl uppercase">Stanley Masinde</h1>
+          <h5 class="text-lg">Fullstack Developer</h5>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <ul class="ml-3 mt-5">
+        <li class="text-xl font-bold mb-2">About</li>
+        <li class="text-xl font-bold mb-2">Projects</li>
+        <li class="text-xl font-bold mb-2">Contact</li>
+      </ul>
+    </div>
+    <div @click="showSideBar = false" class="h-full">hh</div>
+  </div>
+
+  <div
+    class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] aspect-video bg-cover bg-center bg-no-repeat">
+    <div class="bg-black/50 h-full px-3 text-white flex flex-col gap-5 justify-around">
+      <div>
+        <h1 class="text-2xl font-bold">Hi 👋🏾, I am <span class="font-mono font-light text-secondary">Stanley 🙂</span></h1>
+        <h5 class="text-lg font-semibold">I am a <span class="text-tertiary font-mono underline">full-stack
+            developer</span> from <span>Kenya</span> I'm also a <span
+            class="font-mono text-tertiary underline">technical writer</span> and a <span
+            class="font-mono text-tertiary underline">content creator</span>
+        </h5>
+      </div>
+      <div class="flex gap-2 self-baseline">
+        <button class="bg-tertiary p-2 rounded-lg font-bold text-white">Learn more</button>
+        <button class="border-2 border-tertiary rounded-lg px-3 text-tertiary">Get in touch</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, Ref } from 'vue';
+
+const showSideBar: Ref<boolean> = ref(false)
+</script>
