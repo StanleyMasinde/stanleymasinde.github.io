@@ -17,8 +17,8 @@
     </button>
   </nav>
 
-  <Transition enter-active-class="duration-300 ease-out" enter-from-class="transform -translate-x-10"  leave-active-class="-translate-x-3/4"
-    leave-to-class="transform -translate-x-3/4">
+  <Transition enter-active-class="duration-300 ease-out" enter-from-class="transform -translate-x-10"
+    leave-active-class="-translate-x-3/4" leave-to-class="transform -translate-x-3/4">
     <div v-show="showSideBar" :class="{ 'bg-black/20': showSideBar }" class="sm:hidden inset-y-0 fixed w-full">
       <div class="fixed z-50 rounded-r-3xl backdrop-brightness-75 h-full w-3/4 bg-bgl">
         <div class="grid place-items-center my-5">
@@ -30,14 +30,31 @@
         </div>
         <hr class="border-secondary">
         <ul class="ml-3 mt-5">
-          <li class="text-2xl font-bold mb-2">
-            <a href="#about">About</a>
+          <li class="flex gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
+              stroke="currentColor" class="h-8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+            </svg>
+            <a href="#about">
+              <h1 class="text-2xl font-bold mb-2">About</h1>
+            </a>
           </li>
-          <li class="text-2xl font-bold mb-2">
-            <a href="#projects">Projects</a>
+          <li class="flex gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
+              stroke="currentColor" class="h-8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+            </svg>
+            <a class="text-2xl font-bold mb-2" href="#projects">Projects</a>
           </li>
-          <li class="text-2xl font-bold mb-2">
-            <a href="#contact">Contact</a>
+          <li class="flex gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="h-8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            <a class="text-2xl font-bold mb-2" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
