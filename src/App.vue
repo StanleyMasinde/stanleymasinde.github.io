@@ -17,30 +17,33 @@
     </button>
   </nav>
 
-  <div v-show="showSideBar" class="sm:hidden inset-y-0 fixed bg-black/70 w-full">
-    <div class="fixed z-50 rounded-r-3xl backdrop-brightness-75 h-full w-3/4 bg-bgl">
-      <div class="grid place-items-center my-5">
-        <div class="rounded-full border-2 border-secondary aspect-square h-28"></div>
-        <div class="text-center">
-          <h1 class="font-extrabold text-2xl uppercase">Stanley Masinde</h1>
-          <h5 class="text-lg">Fullstack Developer</h5>
+  <Transition enter-active-class="duration-300 ease-out" enter-from-class="transform -translate-x-10"  leave-active-class="-translate-x-3/4"
+    leave-to-class="transform -translate-x-3/4">
+    <div v-show="showSideBar" :class="{ 'bg-black/20': showSideBar }" class="sm:hidden inset-y-0 fixed w-full">
+      <div class="fixed z-50 rounded-r-3xl backdrop-brightness-75 h-full w-3/4 bg-bgl">
+        <div class="grid place-items-center my-5">
+          <div class="rounded-full border-2 border-secondary aspect-square h-28"></div>
+          <div class="text-center">
+            <h1 class="font-extrabold text-2xl uppercase">Stanley Masinde</h1>
+            <h5 class="text-lg">Fullstack Developer</h5>
+          </div>
         </div>
+        <hr class="border-secondary">
+        <ul class="ml-3 mt-5">
+          <li class="text-2xl font-bold mb-2">
+            <a href="#about">About</a>
+          </li>
+          <li class="text-2xl font-bold mb-2">
+            <a href="#projects">Projects</a>
+          </li>
+          <li class="text-2xl font-bold mb-2">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
       </div>
-      <hr class="border-secondary">
-      <ul class="ml-3 mt-5">
-        <li class="text-2xl font-bold mb-2">
-          <a href="#about">About</a>
-        </li>
-        <li class="text-2xl font-bold mb-2">
-          <a href="#projects">Projects</a>
-        </li>
-        <li class="text-2xl font-bold mb-2">
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
+      <div @click="showSideBar = false" class="h-full"></div>
     </div>
-    <div @click="showSideBar = false" class="h-full">hh</div>
-  </div>
+  </Transition>
 
   <div
     class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] aspect-video bg-cover bg-center bg-no-repeat">
@@ -61,18 +64,22 @@
     </div>
   </div>
 
-  <div class="bg-cover bg-no-repeat">
-    <div class="bg-primary text-white w-full px-3 py-5">
+  <div class="bg-cover bg-no-repeat my-4 mx-2">
+    <div class="bg-primary text-white w-full px-3 py-5 rounded-tr-3xl rounded-bl-3xl ">
       <h1 id="about" class="font-bold text-2xl text-secondary">About <span class="text-tertiary">Stanley</span></h1>
       <p class="font-semibold">
-        A <span class="text-tertiary font-mono">full-stack developer</span> with over <span class="text-tertiary font-mono">5 years of
+        A <span class="text-tertiary font-mono">full-stack developer</span> with over <span
+          class="text-tertiary font-mono">5 years of
           experience</span> building products, I have extensive knowledge of
-        web application and <span class="italic text-tertiary font-mono">mobile web</span> development. I have proven experience in
+        web application and <span class="italic text-tertiary font-mono">mobile web</span> development. I have proven
+        experience in
         both endpoints as well as between them puts him in a unique position to
         deliver work that meets your team’s deadlines and exceeds your expectations.
       </p>
     </div>
   </div>
+
+
 </template>
 
 <script setup lang="ts">
