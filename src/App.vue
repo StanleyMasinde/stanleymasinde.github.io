@@ -17,7 +17,7 @@
     </button>
   </nav>
 
-  <div v-show="showSideBar" class="sm:hidden inset-y-0 fixed bg-black/50 w-full">
+  <div v-show="showSideBar" class="sm:hidden inset-y-0 fixed bg-black/70 w-full">
     <div class="fixed z-50 rounded-r-3xl backdrop-brightness-75 h-full w-3/4 bg-bgl">
       <div class="grid place-items-center my-5">
         <div class="rounded-full border-2 border-secondary aspect-square h-28"></div>
@@ -28,9 +28,15 @@
       </div>
       <hr class="border-secondary">
       <ul class="ml-3 mt-5">
-        <li class="text-xl font-bold mb-2">About</li>
-        <li class="text-xl font-bold mb-2">Projects</li>
-        <li class="text-xl font-bold mb-2">Contact</li>
+        <li class="text-2xl font-bold mb-2">
+          <a href="#about">About</a>
+        </li>
+        <li class="text-2xl font-bold mb-2">
+          <a href="#projects">Projects</a>
+        </li>
+        <li class="text-2xl font-bold mb-2">
+          <a href="#contact">Contact</a>
+        </li>
       </ul>
     </div>
     <div @click="showSideBar = false" class="h-full">hh</div>
@@ -40,7 +46,8 @@
     class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] aspect-video bg-cover bg-center bg-no-repeat">
     <div class="bg-black/50 h-full px-3 text-white flex flex-col gap-5 justify-around">
       <div>
-        <h1 class="text-2xl font-bold">Hi 👋🏾, I am <span class="font-mono font-light text-secondary">Stanley 🙂</span></h1>
+        <h1 class="text-2xl font-bold">Hi 👋🏾, I am <span class="font-mono font-light text-secondary">Stanley 🙂</span>
+        </h1>
         <h5 class="text-lg font-semibold">I am a <span class="text-tertiary font-mono underline">full-stack
             developer</span> from <span>Kenya</span> I'm also a <span
             class="font-mono text-tertiary underline">technical writer</span> and a <span
@@ -51,6 +58,19 @@
         <button class="bg-tertiary p-2 rounded-lg font-bold text-white">Learn more</button>
         <button class="border-2 border-tertiary rounded-lg px-3 text-tertiary">Get in touch</button>
       </div>
+    </div>
+  </div>
+
+  <div class="bg-[url('/bg_1.svg')] bg-cover bg-no-repeat">
+    <div class="bg-primary text-white w-full px-3 py-5">
+      <h1 id="about" class="font-bold text-2xl text-secondary">About <span class="text-tertiary">Stanley</span></h1>
+      <p class="font-semibold">
+        A <span class="text-tertiary">full-stack developer</span> with over <span class="text-tertiary">5 years of
+          experience</span> building products, I have extensive knowledge of
+        web application and <span class="italic text-tertiary">mobile web</span> development. His proven experience in
+        both endpoints as well as between them puts him in a unique position to
+        deliver work that meets your team’s deadlines and exceeds your expectations.
+      </p>
     </div>
   </div>
 </template>
