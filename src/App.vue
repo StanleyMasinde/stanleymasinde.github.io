@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex justify-between py-2 px-3 sm:py-4 sm:px-16">
+  <nav id="top" class="flex justify-between py-2 px-3 sm:py-4 sm:px-16">
     <div>
       <h1 class="font-extrabold text-3xl">Stanley</h1>
     </div>
@@ -63,7 +63,7 @@
   </Transition>
 
   <div
-    class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] aspect-video bg-cover bg-center bg-no-repeat">
+    class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] bg-cover bg-center bg-no-repeat h-72">
     <div class="bg-black/50 h-full px-3 text-white flex flex-col gap-5 justify-around">
       <div>
         <h1 class="text-2xl font-bold">Hi 👋🏾, I am <span class="font-mono font-light text-secondary">Stanley 🙂</span>
@@ -96,11 +96,12 @@
     </div>
   </div>
 
-  <div class="px-3">
+  <div id="projects" class="px-2">
     <h1 id="about" class="font-bold text-3xl text-secondary">Featured <span class="text-tertiary">Projects</span></h1>
-    <div v-for="p in featuredProjects" class="bg-primary text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-xl">
+    <div v-for="p in featuredProjects"
+      class="bg-primary text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-3xl">
       <div
-        class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] rounded-t-xl h-48 bg-cover bg-no-repeat aspect-video w-full">
+        class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] rounded-t-3xl h-48 bg-cover bg-no-repeat aspect-video w-full">
       </div>
       <div class="px-3 mt-3">
         <div>
@@ -114,6 +115,41 @@
       </div>
     </div>
   </div>
+
+  <div id="contact" class="px-2">
+    <h1 class="font-bold text-3xl text-secondary">Get in touch!</h1>
+    <p>Have an idea or just wanna say hi?</p>
+
+    <div>
+      <form action="/" method="post" class="flex flex-col gap-2">
+        <label for="name">Your name</label>
+        <input required placeholder="John Doe" class="w-full rounded-lg" type="text" name="name" id="name"
+          autocomplete="name">
+
+        <label for="email">Your E-mail</label>
+        <input required placeholder="john@example.com" class="w-full rounded-lg" type="email" name="email" id="email">
+
+        <label for="message">Your message</label>
+        <textarea required placeholder="What's on your mind?" class="w-full rounded-lg" name="message" rows="2"
+          id="message"></textarea>
+
+        <button class=" bg-tertiary text-white rounded-lg py-2">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="bg-primary text-white mt-3 py-2 text-center">
+    <div>&COPY; Stanley {{ new Date().getFullYear() }}</div>
+    <div>
+      <ul class="flex gap-1 justify-center">
+        <li>Twitter</li>
+        <li>Github</li>
+      </ul>
+    </div>
+    <div>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
@@ -129,12 +165,12 @@ const showSideBar: Ref<boolean> = ref(false)
 const featuredProjects: Ref<Array<FeaturedProject>> = ref([
   {
     title: 'Notes',
-    description: 'A simple notes application built using indexed DB and works fully offline',
+    description: 'A simple notes application built using indexed DB and works fully offline. Inspired by Samsung notes',
     sourceCode: 'https://github.com/stanleymasinde/notes'
   },
   {
     title: 'Gumzo',
-    description: 'A pointless chat application built on Firebase. No account needed dive in and chat with people',
+    description: 'Gumzo is Swahili for conversation. A pointless chat application built on Firebase. No account needed dive in and chat with random strangers',
     sourceCode: 'https://github.com/stanleymasinde/gumzo'
   }
 ])
