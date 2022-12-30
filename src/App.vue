@@ -105,12 +105,12 @@
       </div>
       <div class="px-3 mt-3">
         <div>
-          <h1 class="text-2xl font-bold">{{p.title}}</h1>
+          <h1 class="text-2xl font-bold">{{ p.title }}</h1>
           <p class="">{{ p.description }}</p>
         </div>
         <div class="flex justify-center gap-3 mt-2 py-4 rounded-lg">
-          <button class="font-bold">Live link</button>
-          <button class="font-bold">Source Code</button>
+          <a :href="p.link" target="_blank" rel="noopener noreferrer">Live link</a>
+          <a :href="p.sourceCode" target="_blank" rel="noopener noreferrer">Source code</a>
         </div>
       </div>
     </div>
@@ -141,12 +141,18 @@
   <footer class="bg-primary text-white mt-3 py-2 text-center">
     <div>&COPY; Stanley {{ new Date().getFullYear() }}</div>
     <div>
-      <ul class="flex gap-1 justify-center">
-        <li>Twitter</li>
-        <li>Github</li>
+      <ul class="flex gap-1 justify-center underline">
+        <li>
+          <a class="cursor-pointer" href="https://twitter.com/StanleyMasinde_" target="_blank"
+            rel="noopener noreferrer">Twitter</a>
+        </li>
+        <li>
+          <a class="cursor-pointer" href="http://github.com/StanleyMasinde" target="_blank"
+            rel="noopener noreferrer">Github</a>
+        </li>
       </ul>
     </div>
-    <div>
+    <div class="flex justify-center align-middle">
       <a href="#top">Back to top</a>
     </div>
   </footer>
@@ -166,12 +172,14 @@ const featuredProjects: Ref<Array<FeaturedProject>> = ref([
   {
     title: 'Notes',
     description: 'A simple notes application built using indexed DB and works fully offline. Inspired by Samsung notes',
-    sourceCode: 'https://github.com/stanleymasinde/notes'
+    sourceCode: 'https://github.com/stanleymasinde/notes',
+    link: 'https://notes-n.netlify.app/'
   },
   {
     title: 'Gumzo',
     description: 'Gumzo is Swahili for conversation. A pointless chat application built on Firebase. No account needed dive in and chat with random strangers',
-    sourceCode: 'https://github.com/stanleymasinde/gumzo'
+    sourceCode: 'https://github.com/stanleymasinde/gumzo',
+    link: 'https://stanleymasinde.github.io/gumzo/'
   }
 ])
 </script>
