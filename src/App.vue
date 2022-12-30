@@ -1,12 +1,21 @@
 <template>
-  <nav id="top" class="flex justify-between py-2 px-3 sm:py-4 sm:px-16">
+  <nav id="top" class="flex justify-between py-2 px-3 sm:py-4 sm:px-20 md:px-40">
     <div>
       <h1 class="font-extrabold text-3xl">Stanley</h1>
     </div>
     <ul class="hidden sm:flex gap-3">
-      <li class="cursor-pointer font-bold">About</li>
-      <li class="cursor-pointer font-bold">Projects</li>
-      <li class="cursor-pointer font-bold">Contact</li>
+      <li class="cursor-pointer font-bold">
+        <a href="#about">About</a>
+      </li>
+      <li class="cursor-pointer font-bold">
+        <a href="#skills">Skills</a>
+      </li>
+      <li class="cursor-pointer font-bold">
+        <a href="#projects">Projects</a>
+      </li>
+      <li class="cursor-pointer font-bold">
+        <a href="#contact">Contact</a>
+      </li>
     </ul>
     <button @click="showSideBar = !showSideBar" class="sm:hidden">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -64,9 +73,10 @@
 
   <div
     class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] bg-cover bg-center bg-no-repeat h-72">
-    <div class="bg-black/50 h-full px-3 text-white flex flex-col gap-5 justify-around">
+    <div class="bg-black/50 h-full px-3 text-white flex flex-col gap-5 justify-around sm:mx-20 md:mx-40">
       <div>
-        <h1 class="text-2xl font-bold">Hi 👋🏾, I am <span class="font-mono font-light text-secondary">Stanley 🙂</span>
+        <h1 class="text-3xl font-bold mb-5">Hi 👋🏾, I am <span class="font-mono font-light text-secondary">Stanley
+            🙂</span>
         </h1>
         <h5 class="text-lg font-semibold">I am a <span class="text-tertiary font-mono underline">full-stack
             developer</span> from <span>Kenya</span> I'm also a <span
@@ -81,8 +91,8 @@
     </div>
   </div>
 
-  <div class="bg-cover bg-no-repeat my-4 mx-2">
-    <div class="bg-primary text-white w-full px-3 py-5 rounded-tr-3xl rounded-bl-3xl ">
+  <div class="bg-cover bg-no-repeat my-4 mx-2 sm:mx-20 md:mx-40">
+    <div class="bg-primary text-white w-full px-3 py-5 rounded-tr-3xl rounded-bl-3xl">
       <h1 id="about" class="font-bold text-2xl text-secondary">About <span class="text-tertiary">Stanley</span></h1>
       <p class="font-semibold">
         A <span class="text-tertiary font-mono">full-stack developer</span> with over <span
@@ -96,45 +106,73 @@
     </div>
   </div>
 
-  <div id="projects" class="px-2">
-    <h1 id="about" class="font-bold text-3xl text-secondary">Featured <span class="text-tertiary">Projects</span></h1>
-    <div v-for="p in featuredProjects"
-      class="bg-primary text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-3xl">
-      <div
-        class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] rounded-t-3xl h-48 bg-cover bg-no-repeat aspect-video w-full">
-      </div>
-      <div class="px-3 mt-3">
-        <div>
-          <h1 class="text-2xl font-bold">{{ p.title }}</h1>
-          <p class="">{{ p.description }}</p>
+  <div class="bg-cover bg-no-repeat my-4 mx-2 sm:mx-20 md:mx-40">
+    <div class="">
+      <h1 id="about" class="font-bold text-3xl text-secondary">Skills</h1>
+    </div>
+
+    <div class="sm:flex">
+      <div class="bg-primary text-white px-9 py-1 text-center rounded-bl-xl rounded-tr-xl mt-2 sm:flex">
+        <div class="sm:self-center">
+          <h1 class=" text-7xl font-bold">5+</h1>
+          <p>Years working experience</p>
         </div>
-        <div class="flex justify-center gap-3 mt-2 py-4 rounded-lg">
-          <a :href="p.link" target="_blank" rel="noopener noreferrer">Live link</a>
-          <a :href="p.sourceCode" target="_blank" rel="noopener noreferrer">Source code</a>
+      </div>
+
+      <div class="my-2 p-1 flex-col">
+        <div class="p-4" v-for="skill in skills">
+          <h1 class="font-bold text-2xl">{{ skill.title }}</h1>
+          <p>{{ skill.description }}</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="contact" class="px-2">
+  <div id="projects" class="px-2 mx-2 sm:mx-20 md:mx-40">
+    <h1 id="about" class="font-bold text-3xl text-secondary">Featured <span class="text-tertiary">Projects</span></h1>
+    <div class="sm:flex sm:overflow-x-scroll gap-2">
+      <div v-for="p in featuredProjects"
+        class="bg-primary flex-1 text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-3xl">
+        <div
+          class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] rounded-t-3xl h-48 bg-cover bg-no-repeat aspect-video w-full">
+        </div>
+        <div class="px-3 mt-3">
+          <div>
+            <h1 class="text-2xl font-bold">{{ p.title }}</h1>
+            <p class="">{{ p.description }}</p>
+          </div>
+          <div class="flex justify-center gap-3 mt-2 py-4 rounded-lg">
+            <a class=" transition-all delay-150 border rounded-lg px-2 py-1 hover:bg-tertiary hover:border-tertiary"
+              :href="p.link" target="_blank" rel="noopener noreferrer">Live link</a>
+            <a class="border rounded-lg px-2 py-1 hover:bg-tertiary hover:border-tertiary" :href="p.sourceCode"
+              target="_blank" rel="noopener noreferrer">Source code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="px-2 mx-2 sm:mx-20 md:mx-40">
     <h1 class="font-bold text-3xl text-secondary">Get in touch!</h1>
     <p>Have an idea or just wanna say hi?</p>
+    <div class="sm:grid grid-rows-1 grid-cols-2">
+      <div>
+        <form action="/" method="post" class="flex flex-col gap-2">
+          <label for="name">Your name</label>
+          <input required placeholder="John Doe" class="w-full rounded-lg" type="text" name="name" id="name"
+            autocomplete="name">
 
-    <div>
-      <form action="/" method="post" class="flex flex-col gap-2">
-        <label for="name">Your name</label>
-        <input required placeholder="John Doe" class="w-full rounded-lg" type="text" name="name" id="name"
-          autocomplete="name">
+          <label for="email">Your E-mail</label>
+          <input required placeholder="john@example.com" class="w-full rounded-lg" type="email" name="email" id="email">
 
-        <label for="email">Your E-mail</label>
-        <input required placeholder="john@example.com" class="w-full rounded-lg" type="email" name="email" id="email">
+          <label for="message">Your message</label>
+          <textarea required placeholder="What's on your mind?" class="w-full rounded-lg" name="message" rows="2"
+            id="message"></textarea>
 
-        <label for="message">Your message</label>
-        <textarea required placeholder="What's on your mind?" class="w-full rounded-lg" name="message" rows="2"
-          id="message"></textarea>
-
-        <button class=" bg-tertiary text-white rounded-lg py-2">Send Message</button>
-      </form>
+          <button class=" bg-tertiary text-white rounded-lg py-2">Send Message</button>
+        </form>
+      </div>
+      <div></div>
     </div>
   </div>
 
@@ -167,6 +205,10 @@ interface FeaturedProject {
   link?: string,
   sourceCode?: string
 }
+interface Skill {
+  title: string,
+  description: string
+}
 const showSideBar: Ref<boolean> = ref(false)
 const featuredProjects: Ref<Array<FeaturedProject>> = ref([
   {
@@ -180,6 +222,25 @@ const featuredProjects: Ref<Array<FeaturedProject>> = ref([
     description: 'Gumzo is Swahili for conversation. A pointless chat application built on Firebase. No account needed dive in and chat with random strangers',
     sourceCode: 'https://github.com/stanleymasinde/gumzo',
     link: 'https://stanleymasinde.github.io/gumzo/'
+  },
+  {
+    title: 'Mock API',
+    description: 'A tool that returns fake JSON data on endpoint calls. It is ideal for frontend testing',
+    sourceCode: 'https://github.com/opensource254/mock-api'
   }
 ])
+const skills: Ref<Array<Skill>> = ref([
+  {
+    title: 'Backend development',
+    description: 'I\'ve been building backend solutions for over 4 years. My main tools of trade are Node.js, Laravel, MySQL, Redis and more'
+  },
+  {
+    title: 'Frontend development',
+    description: 'I build high performant frontend applications using Vue.Js, Nuxt and tailwind. My applications work both online and offline'
+  },
+  {
+    title: 'Data engineering',
+    description: 'I have experience in building data collection architectures. From advanced SQL, graph databases and more. Data will always be ready for scientists'
+  }
+]);
 </script>
