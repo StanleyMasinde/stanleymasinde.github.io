@@ -133,8 +133,10 @@
     <div class="sm:flex sm:overflow-x-scroll gap-2">
       <div v-for="p in featuredProjects"
         class="bg-primary flex-1 text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-3xl">
-        <div
-          class="bg-[url('https://res.cloudinary.com/streetcoder/image/upload/v1591363274/empty-wooden-table-with-smoke-float-up-dark-background_68495-135_jtslrn.jpg')] rounded-t-3xl h-48 bg-cover bg-no-repeat aspect-video w-full">
+        <div class="rounded-t-3xl h-48 bg-cover bg-no-repeat aspect-video w-full flex justify-center">
+          <div class="text-center grid place-content-center">
+            <h1 class="font-bold text-8xl">{{ p.title.charAt(0) }}</h1>
+          </div>
         </div>
         <div class="px-3 mt-3">
           <div>
