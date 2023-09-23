@@ -1,14 +1,25 @@
 import "./style.css";
 
+if (navigator.serviceWorker) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then(() => {
+      // TODO: #8 I'm not sure what to do here. This is to make sure the promise resolves for now.
+    })
+    .catch((error) => {
+      console.error("Service worker registration failed due to:", error);
+    });
+}
+
 const navigationDrawer = document.getElementById("navigationDrawer");
 const toggleSideBarButton = document.getElementById("toggleSideBarButton");
 const sideNavShade = document.getElementById("sideNavShade");
 const skillsSection = document.getElementById("skillsSection");
 const featuredProjectsSection = document.getElementById("featuredProjects");
-const copyrightSpan = document.getElementById('copyright')
+const copyrightSpan = document.getElementById("copyright");
 
 toggleSideBarButton.addEventListener("click", (event) => {
-    event.preventDefault()
+  event.preventDefault();
   navigationDrawer.classList.toggle("hidden");
 });
 sideNavShade.addEventListener("click", (event) => {
@@ -95,4 +106,4 @@ featuredProjects.forEach((project) => {
   featuredProjectsSection.appendChild(childElement);
 });
 
-copyrightSpan.innerText = new Date().getFullYear()
+copyrightSpan.innerText = new Date().getFullYear();
