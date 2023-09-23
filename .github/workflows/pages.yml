@@ -31,7 +31,7 @@ jobs:
               corepack enable
               corepack prepare pnpm@latest --activate
       - name: Build app
-        run: pnpm ci && pnpm run build
+        run: pnpm i && pnpm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
