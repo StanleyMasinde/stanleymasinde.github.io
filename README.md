@@ -4,6 +4,7 @@
 ## Development
 1. Clone this repository
 2. Run npm run dev. This project uses [vite][def]
-3. Edit `main.js` file to add custom project an skills data
+3. Edit [main.js][def2] file to add custom project an skills data
 
-[def]: vitejs.dev
+[def]: https://vitejs.dev
+[def2]: main.js
