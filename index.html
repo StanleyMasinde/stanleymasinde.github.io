@@ -87,7 +87,7 @@
 
     <div
       id="navigationDrawer"
-      class="sm:hidden inset-y-0 fixed w-full bg-black/20"
+      class="hidden inset-y-0 fixed w-full bg-black/20"
     >
       <div
         class="fixed z-50 rounded-r-3xl backdrop-brightness-75 h-full w-3/4 bg-bgl"
@@ -169,10 +169,8 @@
       >
         <div>
           <h1 class="text-3xl font-bold mb-5">
-            Hi üëãüèæ, I am
-            <span class="font-mono font-light text-secondary"
-              >Stanley üôÇ</span
-            >
+            Hi 👋🏾, I am
+            <span class="font-mono font-light text-secondary">Stanley 😊</span>
           </h1>
           <h5 class="text-lg font-semibold">
             I am a
@@ -238,50 +236,14 @@
           </div>
         </div>
 
-        <section class="my-2 p-1 flex-col" id="skillsSection">
-        </section>
+        <section class="my-2 p-1 flex-col" id="skillsSection"></section>
       </div>
     </div>
 
     <div id="projects" class="px-2 mx-2 sm:mx-20 md:mx-40">
-      <h1 id="about" class="font-bold text-3xl text-secondary">
-        Featured <span class="text-tertiary">Projects</span>
-      </h1>
-      <div class="sm:flex sm:overflow-x-scroll gap-2">
-        <div
-          v-for="p in featuredProjects"
-          class="bg-primary flex-1 text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-3xl"
-        >
-          <div
-            class="rounded-t-3xl h-48 bg-cover bg-no-repeat aspect-video w-full flex justify-center"
-          >
-            <div class="text-center grid place-content-center">
-              <h1 class="font-bold text-8xl">{{ p.title.charAt(0) }}</h1>
-            </div>
-          </div>
-          <div class="px-3 mt-3">
-            <div>
-              <h1 class="text-2xl font-bold">{{ p.title }}</h1>
-              <p class="">{{ p.description }}</p>
-            </div>
-            <div class="flex justify-center gap-3 mt-2 py-4 rounded-lg">
-              <a
-                class="transition-all delay-150 border rounded-lg px-2 py-1 hover:bg-tertiary hover:border-tertiary"
-                :href="p.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Live link</a
-              >
-              <a
-                class="border rounded-lg px-2 py-1 hover:bg-tertiary hover:border-tertiary"
-                :href="p.sourceCode"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Source code</a
-              >
-            </div>
-          </div>
-        </div>
+      <h1 id="about" class="font-bold text-3xl text-secondary">Featured <span class="text-tertiary">Projects</span></h1>
+      <div id="featuredProjects" class="sm:flex sm:overflow-x-scroll gap-2">
+        
       </div>
     </div>
 
@@ -332,7 +294,7 @@
     </div>
 
     <footer class="bg-primary text-white mt-3 py-2 text-center">
-      <div>&COPY; Stanley {{ new Date().getFullYear() }}</div>
+      <div>&COPY; Stanley <span id="copyright"></span></div>
       <div>
         <ul class="flex gap-1 justify-center underline">
           <li>
