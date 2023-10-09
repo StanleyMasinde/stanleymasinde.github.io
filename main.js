@@ -1,6 +1,6 @@
 import "./style.css";
 
-if (navigator.serviceWorker) {
+if (import.meta.env.PROD && navigator.serviceWorker) {
   navigator.serviceWorker
     .register("/sw.js")
     .then(() => {
@@ -30,32 +30,47 @@ sideNavShade.addEventListener("click", (event) => {
 const skills = [
   {
     title: "Backend development",
-    description:
-      "I've been building backend solutions for over 4 years. My main tools of trade are Node.js, Laravel, MySQL, Redis and more",
+    description: [
+      "4+ years of experience building backend solutions with Node.js, Laravel, MySQL, and Redis",
+      "Proven ability to design and implement scalable and reliable backend architectures",
+      "Experience with microservices and REST APIs",
+    ],
   },
   {
     title: "Frontend development",
-    description:
-      "I build high performant frontend applications using Vue.Js, Nuxt and tailwind. My applications work both online and offline",
+    description: [
+      "Proven ability to build high performant frontend applications using Vue.js, Nuxt, and Tailwind CSS",
+      "Experience with responsive design and accessibility best practices",
+      "Experience with unit testing and integration testing"
+    ],
   },
   {
     title: "Data engineering",
-    description:
-      "I have experience in building data collection architectures. From advanced SQL, graph databases and more. Data will always be ready for scientists",
+    description: [
+      "Experience in building data collection architectures and pipelines using advanced SQL and graph databases",
+      "Experience with data warehousing and big data processing technologies",
+      "Experience with data visualization and machine learning"
+    ],
   },
 ];
 
 skills.forEach((skill) => {
   const childElement = document.createElement("div");
+  childElement.classList.add('p-2', 'w-full')
   const title = document.createElement("h1");
-  const description = document.createElement("p");
+  title.classList.add('text-xl', 'font-bold')
   title.innerText = skill.title;
-  description.innerText = skill.description;
+  const description = document.createElement("ul");
+  description.classList.add('list-disc', 'list-inside')
+  skill.description.forEach((desc) => {
+    const listItem = document.createElement("li");
+    listItem.innerText = desc;
+    description.appendChild(listItem);
+  });
+
   childElement.appendChild(title);
   childElement.appendChild(description);
   skillsSection.appendChild(childElement);
-  childElement.classList.add("p-4");
-  title.classList.add("font-bold", "text-2xl");
 });
 
 const featuredProjects = [
@@ -83,7 +98,7 @@ const featuredProjects = [
 
 featuredProjects.forEach((project) => {
   const childElement = document.createElement("div");
-  childElement.innerHTML = `<div v-for="p in featuredProjects"
+  childElement.innerHTML = `<div
           class="bg-primary flex-1 text-white shadow-md shadow-bgl border border-bgl mt-2 mb-3 rounded-3xl">
           <div class="rounded-t-3xl h-48 bg-cover bg-no-repeat aspect-video w-full flex justify-center">
             <div class="text-center grid place-content-center">
