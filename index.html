@@ -88,10 +88,10 @@
 
 		<div
 			id="navigationDrawer"
-			class="hidden inset-y-0 fixed w-full bg-black/20"
+			class="hidden inset-y-0 fixed w-full backdrop-brightness-50"
 		>
 			<div
-				class="fixed z-50 rounded-r-3xl backdrop-brightness-75 h-full w-3/4 bg-bgl"
+				class="fixed z-[1000] rounded-r-3xl h-full w-3/4 bg-bgl"
 			>
 				<div class="grid place-items-center my-5">
 					<div
@@ -164,37 +164,46 @@
 
 		<div class="py-2">
 			<div class="px-3 text-black sm:mx-20 md:mx-40 bg-gray-100">
-				<div>
-					<h1 class="text-3xl font-bold mb-5">
-						Hi, I'm Stanley,
-						<span class="font-mono font-light text-secondary">Stanley</span>
-					</h1>
-					<h5 class="text-lg font-semibold">
-						Hi, I'm Stanley, a
-						<span class="text-secondary">full-stack software engineer</span> and
-						<span class="text-secondary">technical content creator</span>. I
-						build custom web applications and write technical articles to help
-						developers learn and grow. I'm passionate about using technology to
-						solve real-world problems. If you're looking for a reliable and
-						<i><b>experienced software developer</b></i
-						>, or if you need help with a
-						<span class="text-secondary italic">technical project</span>, I can
-						help. Let's talk!
-					</h5>
-				</div>
-				<div class="flex justify-center mt-5 gap-2 self-baseline">
-					<a
-						href="#about"
-						class="bg-primary py-2 px-3 rounded-lg font-bold text-white"
-					>
-						Learn more
-					</a>
-					<a
-						href="#contact"
-						class="border-2 border-primary rounded-lg py-2 px-3 text-primary"
-					>
-						Get in touch
-					</a>
+				<div class="flex flex-col-reverse md:flex-row justify-end">
+					<div class="flex flex-col justify-end">
+						<div class="mb-5">
+							<h1 class="text-5xl font-extrabold mb-5">
+								Hi, I'm Stanley <span class="box-decoration-clone px-2 hover:box-decoration-slice font-extrabold bg-secondary text-white">Masinde</span>
+							</h1>
+						</div>
+						<div>
+							<h5 class="text-xl font-sans font-medium">
+							Hi, I'm Stanley, a
+								<span class="text-tertiary font-mono font-bold">full-stack software engineer</span>
+								and
+								<span class="text-tertiary">technical content creator</span>. I
+								build custom web applications and write technical articles to
+								help developers learn and grow. I'm passionate about using
+								technology to solve real-world problems. If you're looking for a
+								reliable and <i><b>experienced software developer</b></i
+								>, or if you need help with a
+								<span class="text-tertiary font-mono italic">technical project</span>, I
+								can help. Let's talk!
+							</h5>
+							<div class="flex mt-5 gap-2 self-baseline">
+								<a
+									href="#about"
+									class="bg-primary py-2 px-3 rounded-lg font-bold text-white"
+								>
+									Learn more
+								</a>
+								<a
+									href="#contact"
+									class="border-2 border-primary rounded-lg py-2 px-3 text-primary"
+								>
+									Get in touch
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="hidden lg:block">
+						<img class="saturate-100" src="/hero.png" alt="Photo of Stanley Masinde" />
+					</div>
 				</div>
 			</div>
 		</div>
