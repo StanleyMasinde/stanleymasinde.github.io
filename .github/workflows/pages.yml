@@ -8,7 +8,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -28,14 +28,14 @@ jobs:
           node-version: 20.x
       - name: Setup PNPM
         run: |
-              corepack enable
-              corepack prepare pnpm@latest --activate
+          corepack enable
+          corepack prepare pnpm@latest --activate
       - name: Build app
         run: pnpm i && pnpm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "./dist/"
+          path: './dist/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
