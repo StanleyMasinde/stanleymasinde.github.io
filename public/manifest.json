@@ -2,10 +2,14 @@
   "theme_color": "#232946",
   "background_color": "#232946",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "scope": "/",
   "start_url": "/",
   "name": "Stanley Masinde",
   "short_name": "Stanley Masinde",
+  "description": "Official website of Stanley Masinde, a Software Developer specialized in building scalable web applications.",
+  "orientation": "portrait",
+  "lang": "en",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
