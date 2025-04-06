@@ -2,7 +2,7 @@
  * The main service worker file.
  * Author: Stanley Masinde
  */
-const version = 'v5'
+const version = '0.3.2'
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
