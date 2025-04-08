@@ -2,7 +2,7 @@
 
 Welcome to my collection of open source projects — ideas crafted with purpose, code written with care.
 
-## 🛠 Featured Project
+## 🛠 Featured Projects
 
 ### 🔗 [Lnky](https://lnky.netlify.app)  
 [![GitHub Repo](https://img.shields.io/badge/GitHub-lnky-181717?logo=github)](https://github.com/stanleymasinde/lnky)
