@@ -4,7 +4,7 @@ Welcome to my collection of open source projects — ideas crafted with purpose,
 
 ## 🛠 Featured Projects
 
-### 🔗 [Lnky](https://lnky.netlify.app)  
+### 🔗 [Lnky](https://lnky.stanleymasinde.com)  
 [![GitHub Repo](https://img.shields.io/badge/GitHub-lnky-181717?logo=github)](https://github.com/stanleymasinde/lnky)
 
 > **Lnky** strips trackers from URLs before you share them — because your privacy shouldn't come with fine print.
@@ -26,7 +26,7 @@ Welcome to my collection of open source projects — ideas crafted with purpose,
 
 ---
 
-### 📝 [Notes](https://notes-n.netlify.app)  
+### 📝 [Notes](https://notes.stanleymasinde.com)  
 [![GitHub Repo](https://img.shields.io/badge/GitHub-notes-181717?logo=github)](https://github.com/StanleyMasinde/notes)
 
 > **Notes** is an offline-first note-taking app — open your browser and start writing.
