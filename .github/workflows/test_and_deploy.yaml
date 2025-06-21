@@ -72,9 +72,4 @@ jobs:
 
       - name: Restart ${{ steps.env.outputs.env }} service 🔁
         run: |
-          ssh ${{ secrets.IP_AND_USER }} "
-            sudo systemctl restart ${{ steps.env.outputs.service }} &&
-            sleep 2 &&
-            sudo systemctl is-active --quiet ${{ steps.env.outputs.service }} ||
-            (sudo systemctl status ${{ steps.env.outputs.service }} && exit 1)
-          "
+          ssh ${{ secrets.IP_AND_USER }} "sudo systemctl restart ${{ steps.env.outputs.service }}"
