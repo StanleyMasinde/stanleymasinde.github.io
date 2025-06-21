@@ -6,6 +6,7 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			title: 'Stanley Masinde — Fullstack Engineer, Writer & Technologist',
+			titleTemplate: '',
 			meta: [
 				{
 					name: 'description',
@@ -15,9 +16,13 @@ export default defineNuxtConfig({
 		}
 	},
 
+	site: {
+		name: 'Stanley Masinde'
+	},
+
 	compatibilityDate: '2025-05-15',
 	devtools: { enabled: true },
-	modules: ['@nuxt/eslint'],
+	modules: ['@nuxt/eslint', '@nuxtjs/seo'],
 
 	css: ['~/assets/css/main.css'],
 

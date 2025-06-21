@@ -1,4 +1,73 @@
 <script setup lang="ts">
+useSchemaOrg([
+  definePerson({
+    name: 'Stanley Masinde',
+    url: 'https://stanleymasinde.com',
+    jobTitle: 'Software Engineer',
+    description: 'Self-taught fullstack engineer from Nairobi, Kenya. I build systems with Laravel, Node.js, Vue, and Rust. I write articles, create YouTube content, and ship polished software.',
+    image: 'https://stanleymasinde.com/hero.png',
+    gender: 'Male',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nairobi',
+      addressCountry: 'Kenya'
+    },
+    knowsLanguage: [
+      { '@type': 'Language', name: 'English' },
+      { '@type': 'Language', name: 'Swahili' }
+    ],
+    sameAs: [
+      'https://twitter.com/StanleyMasinde_',
+      'https://x.com/StanleyMasinde_',
+      'https://www.youtube.com/@Stanleymasinde',
+      'https://linkedin.com/in/stanley-masinde',
+      'https://github.com/stanleymasinde',
+      'https://stanleymasinde.medium.com'
+    ],
+    knowsAbout: [
+      'Fullstack Development',
+      'Laravel',
+      'Node.js',
+      'Vue.js',
+      'Rust',
+      'Systems Programming',
+      'Tech Writing',
+      'Developer Advocacy'
+    ],
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Self-Taught',
+      url: 'https://stanleymasinde.com'
+    }
+  })
+])
+
+useSeoMeta({
+  title: 'Stanley Masinde — Fullstack Engineer, Writer & Technologist',
+  description: 'Self-taught fullstack engineer from Nairobi. I build robust software with Laravel, Node.js, Vue, and Rust. I write, speak, and create developer-focused content.',
+  ogTitle: 'Stanley Masinde — Software Engineer & Tech Storyteller',
+  ogDescription: 'Engineer. Writer. Creator. I build with Laravel, Node.js, Vue, and Rust. I write technical articles, publish YouTube videos, and lead products like Farm Direct and Lnky.',
+  ogType: 'website',
+  ogUrl: 'https://stanleymasinde.com',
+  ogImage: 'https://stanleymasinde.com/logo.png',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Stanley Masinde — Software Engineer & Tech Storyteller',
+  twitterDescription: 'Engineer. Writer. Creator. I build with Laravel, Node.js, Vue, and Rust. I write technical articles, publish YouTube videos, and lead products like Farm Direct and Lnky.',
+  twitterImage: 'https://stanleymasinde.com/logo.png'
+})
+useHead({
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/vnd.microsoft.icon',
+      href: '/favicon.ico'
+    },
+    {
+      rel: 'canonical',
+      href: 'https://stanleymasinde.com'
+    }
+  ]
+})
 </script>
 
 <template>
