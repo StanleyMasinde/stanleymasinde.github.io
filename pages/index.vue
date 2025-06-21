@@ -191,7 +191,7 @@
     </div>
 
     <footer class="bg-primary mt-3 py-2 text-center text-white">
-      <div>&COPY; Stanley <span id="copyright"/></div>
+		<div>&COPY; Stanley <span id="copyright"/>{{ new Date().getFullYear() }}</div>
       <div>
         <ul class="flex justify-center gap-1 underline">
           <li>
