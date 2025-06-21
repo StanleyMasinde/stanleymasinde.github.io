@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	const mobileSideBar = ref<Boolean>(false)
+</script>
 
 <template>
    <div class="bg-bgl">
@@ -17,7 +19,7 @@
           <a href="#contact">Contact</a>
         </li>
       </ul>
-      <button id="toggleSideBarButton" class="sm:hidden">
+      <button id="toggleSideBarButton" class="sm:hidden" @click="mobileSideBar = !mobileSideBar">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -35,9 +37,7 @@
       </button>
     </nav>
 
-    <div
-      id="navigationDrawer"
-      class="fixed inset-y-0 hidden w-full backdrop-brightness-50"
+    <div v-show="mobileSideBar" id="navigationDrawer" class="fixed inset-y-0 w-full backdrop-brightness-50"
     >
       <div class="bg-bgl fixed z-1000 h-full w-3/4 rounded-r-3xl">
         <div class="my-5 grid place-items-center">
@@ -89,7 +89,7 @@
           </li>
         </ul>
       </div>
-      <div id="sideNavShade" class="h-full"/>
+      <div id="sideNavShade" class="h-full" @click="mobileSideBar = false"/>
     </div>
 
     <div class="py-2">
