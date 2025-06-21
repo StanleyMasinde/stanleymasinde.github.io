@@ -1,0 +1,75 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Determine environment 🌍
+        id: env
+        run: |
+          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+            echo "env=production" >> $GITHUB_OUTPUT
+            echo "domain=stanleymasinde.com" >> $GITHUB_OUTPUT
+            echo "service=app-stanleymasinde-com.service" >> $GITHUB_OUTPUT
+            echo "subdir=/var/www/stanleymasinde.com" >> $GITHUB_OUTPUT
+            echo "url=https://stanleymasinde.com" >> $GITHUB_OUTPUT
+          else
+            echo "env=staging" >> $GITHUB_OUTPUT
+            echo "domain=beta.stanleymasinde.com" >> $GITHUB_OUTPUT
+            echo "service=app-beta-stanleymasinde-com.service" >> $GITHUB_OUTPUT
+            echo "subdir=/var/www/beta.stanleymasinde.com" >> $GITHUB_OUTPUT
+            echo "url=https://beta.stanleymasinde.com" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set environment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            core.setOutput("name", "${{ steps.env.outputs.env }}")
+            core.setOutput("url", "${{ steps.env.outputs.url }}")
+
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js + pnpm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23
+
+      - name: Install dependencies 👨🏻‍💻
+        run: |
+          corepack enable
+          pnpm install
+
+      - name: Build Nuxt 🏗️
+        run: pnpm run build
+
+      - name: Check build output exists
+        run: |
+          [ -d .output ] || (echo "❌ Missing Nuxt .output directory" && exit 1)
+
+      - name: Setup SSH 🔐
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keygen -F ${{ secrets.SERVER_IP }} || ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to ${{ steps.env.outputs.env }} 🚀
+        run: |
+          rsync -az --delete .output/ ${{ secrets.IP_AND_USER }}:${{ steps.env.outputs.subdir }}
+
+      - name: Restart ${{ steps.env.outputs.env }} service 🔁
+        run: |
+          ssh ${{ secrets.IP_AND_USER }} "sudo systemctl restart ${{ steps.env.outputs.service }}"
