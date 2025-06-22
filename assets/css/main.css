@@ -3,10 +3,10 @@
 @plugin '@tailwindcss/forms';
 
 @theme {
-  --color-primary: #232946;
-  --color-secondary: #b8c1ec;
-  --color-tertiary: #ec5477;
-  --color-bgl: #eff1f6;
+	--color-primary: #232946;
+	--color-secondary: #b8c1ec;
+	--color-tertiary: #ec5477;
+	--color-bgl: #eff1f6;
 }
 
 /*
@@ -18,11 +18,18 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+}
+
+@layer components {
+	.text-input {
+		@apply w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-tertiary
+	}
 }
