@@ -30,5 +30,13 @@ export default defineNuxtConfig({
 		plugins: [
 			tailwindcss(),
 		]
+	},
+
+	eslint: {
+		config: {
+			stylistic: {
+				semi: false
+			}
+		}
 	}
 })
