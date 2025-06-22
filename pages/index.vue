@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { z } from 'zod'
+import { ContactComponent } from '#components'
+
 useSchemaOrg([
   definePerson({
     name: 'Stanley Masinde',
@@ -167,72 +170,7 @@ useHead({
       <hr>
       <div class="grid-cols-2 grid-rows-1 sm:grid">
         <div class="my-6">
-          <form
-            method="POST"
-            action="/api/contact"
-          >
-            <div>
-              <label
-                for="name"
-                class="block font-semibold mb-1"
-              >
-                What's your name?
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autocomplete="name"
-                placeholder="John Doe"
-                required
-                class="text-input"
-              >
-            </div>
-
-            <div>
-              <label
-                for="email"
-                class="block font-semibold mb-1"
-              >
-                What's your email?
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                placeholder="john@example.com"
-                required
-                class="text-input"
-              >
-            </div>
-
-            <div>
-              <label
-                for="message"
-                class="block font-semibold mb-1"
-              >
-                What's on your mind?
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Your message..."
-                rows="5"
-                required
-                class="text-input resize-none"
-              />
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                class="bg-tertiary text-white font-semibold px-6 py-3 rounded-lg hover:bg-tertiary/90 transition"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
+          <ContactComponent />
         </div>
         <div />
       </div>
