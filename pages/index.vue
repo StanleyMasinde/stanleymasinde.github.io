@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { z } from 'zod'
 import { ContactComponent } from '#components'
 
 useSchemaOrg([

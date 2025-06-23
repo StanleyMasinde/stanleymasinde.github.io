@@ -1,42 +1,42 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
-	app: {
-		head: {
-			title: 'Stanley Masinde — Fullstack Engineer, Writer & Technologist',
-			titleTemplate: '',
-			meta: [
-				{
-					name: 'description',
-					content: 'Self-taught fullstack engineer from Nairobi. I build software, write on tech, speak at events & lead projects like Farm Direct and Lnky.'
-				}
-			]
-		}
-	},
+  modules: ['@nuxt/eslint', '@nuxtjs/seo'],
+  devtools: { enabled: true },
+  app: {
+    head: {
+      title: 'Stanley Masinde — Fullstack Engineer, Writer & Technologist',
+      titleTemplate: '',
+      meta: [
+        {
+          name: 'description',
+          content: 'Self-taught fullstack engineer from Nairobi. I build software, write on tech, speak at events & lead projects like Farm Direct and Lnky.',
+        },
+      ],
+    },
+  },
 
-	site: {
-		name: 'Stanley Masinde'
-	},
+  css: ['~/assets/css/main.css'],
 
-	compatibilityDate: '2025-05-15',
-	devtools: { enabled: true },
-	modules: ['@nuxt/eslint', '@nuxtjs/seo'],
+  site: {
+    name: 'Stanley Masinde',
+  },
 
-	css: ['~/assets/css/main.css'],
+  compatibilityDate: '2025-05-15',
 
-	vite: {
-		plugins: [
-			tailwindcss(),
-		]
-	},
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
 
-	eslint: {
-		config: {
-			stylistic: {
-				semi: false
-			}
-		}
-	}
+  eslint: {
+    config: {
+      stylistic: {
+        semi: false,
+      },
+    },
+  },
 })
