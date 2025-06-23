@@ -4,7 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
 
   modules: ['@nuxt/eslint', '@nuxtjs/seo'],
+
+  plugins: ['~/plugins/pwa.client.ts'],
+
   devtools: { enabled: true },
+
   app: {
     head: {
       title: 'Stanley Masinde — Fullstack Engineer, Writer & Technologist',
