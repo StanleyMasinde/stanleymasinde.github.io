@@ -1,6 +1,6 @@
 ## My Website
 
-> This repo contains the codebase of <about.stanleymasinde.com> a summary of my professional experience. 
+> This repo contains the codebase of [stanleymasinde.come](https://stanleymasinde.com) a summary of my professional experience. 
 
 ## Development
 
