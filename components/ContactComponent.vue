@@ -73,7 +73,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
           Message sent!
         </h3>
         <p class="text-sm mt-1">
-          Thanks for reaching out — we’ll get back to you soon.
+          Thanks for reaching out — I'll get back to you ASAP.
         </p>
       </div>
     </div>
