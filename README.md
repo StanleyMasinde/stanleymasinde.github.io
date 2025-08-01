@@ -2,11 +2,8 @@
 
 > This repo contains the codebase of [stanleymasinde.com](https://stanleymasinde.com) a summary of my professional experience. 
 
-## Development
+### Development
+Check Nuxt Docs
 
-1. Clone this repository
-2. Run npm run dev. This project uses [vite][def]
-3. Edit [main.js][def2] file to add custom project an skills data
-
-[def]: https://vitejs.dev
-[def2]: main.js
+### Docs
+This repo is going through a lot of changes. It will soo host everything about me. No more fragmentation.
